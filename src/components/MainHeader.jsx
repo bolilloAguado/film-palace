@@ -6,7 +6,7 @@ export default function DecoHeader() {
     <>
       <div className="flex w-full md:mb-5 mb-3 items-center">
         <Logo />
-        <hr className="grow border-2 ml-4 mr-7 border-y border-stone-600" />
+        <hr className="grow border-t-3 ml-4 mr-7 border-stone-600" />
         <SearchBar />
       </div>
     </>
