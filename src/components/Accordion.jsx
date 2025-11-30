@@ -1,5 +1,4 @@
 import { useState } from "react";
-import MenuItem from "./MenuItem";
 
 export default function Accordion({ icon, title, children }) {
   const [accordionOpen, setAccordionOpen] = useState(false);
@@ -18,8 +17,8 @@ export default function Accordion({ icon, title, children }) {
       </button>
 
       <div
-        className={`text-[24px] overflow-hidden transition-all duration-100 ease-in-out
-    ${accordionOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}
+        className={`text-[24px] transition-all duration-100 ease-in-out
+    ${accordionOpen ? "opacity-100" : "h-0 overflow-hidden opacity-0"}`}
       >
         {children}
       </div>
