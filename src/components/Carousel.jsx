@@ -20,7 +20,7 @@ export default function Carousel({ children: slides }) {
 
   return (
     <>
-      <div className="overflow-hidden relative w-full md:max-h-120 rounded-4xl">
+      <div className="overflow-hidden relative w-full md:max-h-100 rounded-4xl">
         <div
           className="flex transition-transform ease-out duration-500"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -30,13 +30,13 @@ export default function Carousel({ children: slides }) {
 
         <div className="text-5xl absolute inset-0 flex justify-between items-center p-4">
           <button
-            className="cursor-pointer px-1 rounded-full bg-white/40 hover:bg-white/50"
+            className="cursor-pointer px-1 rounded-full bg-white/40 hover:bg-white/50 transition duration-200"
             onClick={prevSlide}
           >
             <i className="bxs bx-chevron-left mt-1" />
           </button>
           <button
-            className="cursor-pointer px-1 rounded-full bg-white/40 hover:bg-white/50"
+            className="cursor-pointer px-1 rounded-full bg-white/40 hover:bg-white/50 transition duration-200"
             onClick={nextSlide}
           >
             <i className="bxs bx-chevron-right mt-1" />
