@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Index from "./pages";
+import Index from "./pages/Index";
+import ResultsPage from "./pages/ResultsPage";
 import "./App.css";
 
 
@@ -12,6 +13,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </Router>
   );

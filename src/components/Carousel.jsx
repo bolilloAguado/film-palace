@@ -45,10 +45,11 @@ export default function Carousel({ children: slides }) {
 
         <div className="absolute bottom-4 p-4 left-0 right-0">
           <div className="flex items-center justify-center gap-2">
-            {slides.map((_, slide) => (
+            {slides.map((_, index) => (
               <div
+                key={index}
                 className={`transition w-2 h-2 rounded-full ${
-                  currentSlide === slide ? "bg-white" : "bg-white/50"
+                  currentSlide === index ? "bg-white" : "bg-white/50"
                 }`}
               />
             ))}

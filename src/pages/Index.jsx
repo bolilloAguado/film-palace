@@ -16,14 +16,18 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex flex-col max-w-6xl mx-auto text-stone-300 font-amatic-sc grayscale-50 pb-6">
+      <div className="flex flex-col max-w-6xl mx-auto font-amatic-sc grayscale-50 pb-6 text-stone-300">
         <MainHeader />
         <div className="w-max lg:px-5 px-3 lg:pb-3 pb-2 rounded-md bg-stone-900 lg:ml-10 ml-5 lg:-mb-10 -mb-5 z-20 lg:text-3xl font-dancing-script">
           Now trending in Film Palace...
         </div>
         <Carousel>
-          {slides.map((slide) => (
-            <img src={slide} className="object-cover w-full shrink-0" />
+          {slides.map((slide, index) => (
+            <img 
+              key={index}
+              src={slide} 
+              className="object-cover w-full shrink-0"
+            />
           ))}
         </Carousel>
 
