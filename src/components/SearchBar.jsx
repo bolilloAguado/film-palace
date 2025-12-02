@@ -8,7 +8,7 @@ export default function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() !== "") {
-      navigate(`/results?query=${encodeURIComponent(title)}`); // Actualiza la URL
+      navigate(`/results?query=${encodeURIComponent(title)}`); // Updates the URL
     }
   };
 
