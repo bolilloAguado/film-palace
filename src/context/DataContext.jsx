@@ -4,12 +4,12 @@ import { useFetch } from "../hooks/useFetch";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [query, setQuery] = useState("batman");
-  const { isLoading, error, data } = useFetch(`&s=${query}`);
+  const [query, setQuery] = useState("");
+  const { isLoading, error, data } = useFetch(query ? `&s=${query}` : null);
 
   return (
     <DataContext.Provider value={{ setQuery, isLoading, error, data }}>
-        {children}
+      {children}
     </DataContext.Provider>
   );
 };

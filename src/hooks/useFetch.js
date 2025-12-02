@@ -12,13 +12,13 @@ export const useFetch = (params) => {
       .then((response) => response.json())
       .then((responseJSON) => {
         if (responseJSON.Response === "True") {
-            setData(responseJSON.Search);
-            setError(false);
+          setData(responseJSON.Search);
+          setError(false);
         } else {
-            setError(true);
+          setError(true);
         }
         setIsLoading(false);
-        console.log("data: ", responseJSON)
+        console.log("data: ", responseJSON);
       })
       .catch((error) => {
         console.log(error);
@@ -31,5 +31,5 @@ export const useFetch = (params) => {
     fetchMovie(`${API_ENDPOINT}${params}`);
   }, [params]);
 
-  return {isLoading, error, data}
+  return { isLoading, error, data };
 };
