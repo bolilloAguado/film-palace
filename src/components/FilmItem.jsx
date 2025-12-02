@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function MovieItem({ id, poster, title, year, gridView }) {
+export default function FilmItem({ id, poster, title, year, gridView }) {
   const image = poster === "N/A" ? "/defaultImage.png" : poster;
 
   const imageNotFoundHandler = (e) => (e.target.src = "/defaultImage.png");
@@ -43,3 +43,4 @@ export default function MovieItem({ id, poster, title, year, gridView }) {
     </Link>
   );
 }
+ 

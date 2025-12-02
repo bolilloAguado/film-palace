@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { DataContext } from "../context/DataContext";
-import MovieItem from "./MovieItem";
+import FilmItem from "./FilmItem";
 import ResultsNavigation from "./ResultsNavigation";
 
-export default function MovieResults() {
+export default function FilmResults() {
   const { setQuery, isLoading, data } = useContext(DataContext);
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
@@ -50,7 +50,7 @@ export default function MovieResults() {
       >
         {!isLoading
           ? data?.map((item, index) => (
-              <MovieItem
+              <FilmItem
                 key={index}
                 id={item.imdbID}
                 title={item.Title}
