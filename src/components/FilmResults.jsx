@@ -1,40 +1,60 @@
 import { useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import FilmItem from "./FilmItem";
+import { useState } from "react";
+import Pagination from "./Pagination";
 
 export default function FilmResults() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query");
+  const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
+  const [gridView, setGridView] = useState(true);
 
-  const getMovies = async () => {
+  const fetchFilms = async ({ queryKey }) => {
+    const [_key, query, page] = queryKey;
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=6260c921&s=${query}`
+      `http://www.omdbapi.com/?apikey=6260c921&s=${query}&page=${page}`
     );
-    return await response.json();
+    return response.json();
   };
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["movies", query],
-    queryFn: getMovies,
+    queryKey: ["films", query, page],
+    queryFn: fetchFilms,
+    keepPreviousData: true
   });
+
+  const handlePageChange = (pageNumber) => {
+    setPage(pageNumber);
+    setSearchParams({ query, page: pageNumber });
+  };
 
   return (
     <div className="text-2xl">
       <header className="flex items-center mb-2">
-        {console.log(data)}
         <p>
           Results for: <b>{query}</b>
         </p>
+        <hr className="grow border-t-2 mx-2 border-stone-600" />
+        <div className="flex items-center gap-2">
+          <p>Order as:</p>
+          <button onClick={() => setGridView(true)} title="Grid view" className="cursor-pointer hover:scale-115 transition duration-100">
+            <i className="bxs bx-grid text-3xl" />
+          </button>
+          <button onClick={() => setGridView(false)} title="List view" className="cursor-pointer hover:scale-115 transition duration-100">
+            <i className="bxs bx-list text-4xl" />
+          </button>
+        </div>
       </header>
 
-      {isLoading ?
+      {isLoading ? (
         "Loading..."
-      : error ?
+      ) : error ? (
         "Error loading films."
-      : data?.Error === "Movie not found!" ?
+      ) : data?.Error === "Movie not found!" ? (
         <p>No results found for <b>{query}</b></p>
-      : (
-        <div className="grid lg:grid-cols-5 grid-cols-2 gap-5">
+      ) : (
+        <div className={gridView ? "grid lg:grid-cols-5 grid-cols-2 gap-5" : "flex flex-col gap-5"}>
           {data?.Search?.map((item) => (
             <FilmItem
               key={item.imdbID}
@@ -42,11 +62,17 @@ export default function FilmResults() {
               title={item.Title}
               poster={item.Poster}
               year={item.Year}
-              gridView={true}
+              gridView={gridView}
             />
           ))}
         </div>
       )}
+
+      <Pagination
+        totalResults={data?.totalResults}
+        currentPage={page}
+        onPageChange={data?.Error === "Movie not found!" ? () => {} : handlePageChange}
+      />
     </div>
   );
 }

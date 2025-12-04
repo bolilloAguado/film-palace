@@ -7,7 +7,7 @@ export default function ResultsPage() {
   const query = searchParams.get("query");
 
   return (
-    <div className="flex flex-col max-w-6xl mx-auto text-stone-300 font-amatic-sc">
+    <div className="flex flex-col max-w-6xl mx-auto text-stone-300 font-amatic-sc p-5">
       <MainHeader />
       <FilmResults />
     </div>
