@@ -5,11 +5,10 @@ import Menu from "../components/Menu";
 import Accordion from "../components/Accordion";
 import MenuItem from "../components/MenuItem";
 import Card from "../components/Card";
-import img1 from "/chainsaw-man-the-3840x2160-23013.jpg";
 
 export default function Index() {
   const slides = [
-    img1,
+    "/defaultImage.png",
     "https://media.istockphoto.com/id/1069539210/photo/fantastic-autumn-sunset-of-hintersee-lake.jpg?s=612x612&w=0&k=20&c=oqKJzUgnjNQi-nSJpAxouNli_Xl6nY7KwLBjArXr_GE=",
     "https://st2.depositphotos.com/1491329/11367/i/450/depositphotos_113672526-Beautiful-nature-scene.jpg",
   ];
