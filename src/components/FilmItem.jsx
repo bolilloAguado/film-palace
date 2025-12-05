@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 export default function FilmItem({ id, poster, title, year, gridView }) {
   const image = poster === "N/A" ? "/defaultImage.png" : poster;
-
   const imageNotFoundHandler = (e) => (e.target.src = "/defaultImage.png");
 
   return (

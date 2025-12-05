@@ -5,7 +5,7 @@ import Menu from "../components/Menu";
 import Accordion from "../components/Accordion";
 import MenuItem from "../components/MenuItem";
 import Card from "../components/Card";
-import img1 from "../assets/chainsaw-man-the-3840x2160-23013.jpg";
+import img1 from "/chainsaw-man-the-3840x2160-23013.jpg";
 
 export default function Index() {
   const slides = [
