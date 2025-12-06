@@ -13,7 +13,7 @@ cd film-palace
 npm install
 ```
 > [!IMPORTANT]
-Antes de ejecutar el proyecto de manera local, es necesario crear un archivo `.env` en la carpeta raíz del proyecto, con la `VITE_API_KEY` obtenida previamente en https://www.omdbapi.com/.
+Antes de ejecutar el proyecto de manera local, es necesario ya sea, crear un archivo `.env` en la carpeta raíz del proyecto, o modificar el archivo `.env.example`, con la `VITE_API_KEY` obtenida previamente en https://www.omdbapi.com/.
 
 Posteriormente, para su ejecución local:
 ```
