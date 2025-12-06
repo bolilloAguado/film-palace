@@ -12,9 +12,6 @@ git clone https://github.com/bolilloAguado/movie-palace/
 cd movie-palace
 npm install
 ```
-> [!IMPORTANT]
-Antes de ejecutar el proyecto, es necesario crear antes un archivo `.env` que contenga la `VITE_API_KEY`, la llave a la API de OMDb, en la carpeta raíz.
-  
 Posteriormente, para su ejecución local:
 ```
 npm run dev
