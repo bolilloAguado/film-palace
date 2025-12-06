@@ -27,6 +27,8 @@ npm run dev
 - React 19, React Paginate y React Query
 - Tailwind CSS 4
 - Fetch API
+- BoxIcons
+- Google Fonts
 - Vercel (para la demo)
 
 ## Funcionalidades
