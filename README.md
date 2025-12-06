@@ -17,7 +17,6 @@ Posteriormente, para su ejecución local:
 npm run dev
 ```
 ## Tecnologías utilizadas
-- JavaScript
 - HTML 5 y CSS 3
 - npm
 - Vite 7
@@ -35,4 +34,6 @@ npm run dev
   
 Los componentes pertenecientes a filtros sólo son placeholders para implementación futura de la función de filtros.
 ## Vista previa
-  <img alt="preview" src="./docs/preview.gif" />
+![preview](https://i.imgur.com/3XKsRXK.gif)
+
+
