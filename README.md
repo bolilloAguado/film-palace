@@ -1,7 +1,7 @@
 # Film Palace
 Este proyecto es mi entrada al Hackathon 2025 de la IEEE ESTl.  
 Consiste en una página web que nos permite buscar y ver detalles sobre películas y series, obtenidas de la [OMDb](https://www.omdbapi.com/).  
-Movie Palace fue construida principalmente con React, Tailwind CSS y React Query.
+Film Palace fue construida principalmente con React, Tailwind CSS y React Query.
 
 ## Instalación
 > Es indispensable tener instalado [Node.js](https://nodejs.org/es) (versión 22.12+), un gestor de paquetes (de preferencia [npm](https://www.npmjs.com/)) y [Vite](https://vite.dev/)
@@ -41,6 +41,6 @@ Los componentes pertenecientes a filtros sólo son placeholders para implementac
 <img alt="preview" src="./docs/preview.gif" />
 
 ## Demo en vivo  
-Puedes ver una demo de Film Palace aquí: https://movie-palace-two.vercel.app/
+Puedes ver una demo de Film Palace aquí: https://film-palace-two.vercel.app/
 
 
