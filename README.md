@@ -41,6 +41,6 @@ Los componentes pertenecientes a filtros sólo son placeholders para implementac
 <img alt="preview" src="./docs/preview.gif" />
 
 ## Demo en vivo  
-Puedes ver una demo de Film Palace aquí: https://film-palace-two.vercel.app/
+Puedes ver una demo de Film Palace aquí: https://film-palace.vercel.app/
 
 
