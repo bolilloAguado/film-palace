@@ -3,7 +3,7 @@ export default function Logo() {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
-    e.preventDefault(); // para evitar que se recargue la página
+    e.preventDefault(); // To prevent the page from reloading
     navigate(`/`);
   }
 

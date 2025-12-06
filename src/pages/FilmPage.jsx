@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
 import SquarePill from "../components/SquarePill";
+const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function FilmPage() {
   const { id } = useParams();
@@ -9,7 +10,7 @@ export default function FilmPage() {
   const fetchMovie = async ({ queryKey }) => {
     const [_key, id] = queryKey;
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=6260c921&i=${id}`
+      `https://www.omdbapi.com/?apikey=${VITE_API_KEY}&i=${id}`
     );
     return response.json();
   };
